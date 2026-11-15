@@ -25,20 +25,20 @@
     html.doom-touch, html.doom-touch body { touch-action: none; overscroll-behavior: none;
       -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
     @media (orientation: portrait) {
-      html.doom-touch body { justify-content: flex-start;
-        padding-top: calc(env(safe-area-inset-top) + 60px); box-sizing: border-box; }
-      html.doom-touch #screen { width: min(100vw, calc((100vh - 60px - 48px) * 4 / 3)); }
+      html.doom-touch main { padding-top: calc(env(safe-area-inset-top) + 8px); }
     }
     .dt { position: fixed; z-index: 10; touch-action: none; -webkit-tap-highlight-color: transparent;
       -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
-      font: 600 15px -apple-system, system-ui, sans-serif; color: rgba(255,255,255,.9);
-      background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.35);
+      font: 600 15px -apple-system, system-ui, sans-serif; color: var(--pinto-text, #1d1d1f);
+      background: color-mix(in srgb, var(--pinto-text, #1d1d1f) 10%, transparent);
+      border: 1.5px solid color-mix(in srgb, var(--pinto-text, #1d1d1f) 35%, transparent);
       box-sizing: border-box; margin: 0; padding: 0; }
-    .dt.on, .dt-pad.on .dt-knob { background: rgba(255,255,255,.32); border-color: rgba(255,255,255,.6); }
+    .dt.on, .dt-pad.on .dt-knob { background: color-mix(in srgb, var(--pinto-text, #1d1d1f) 28%, transparent);
+      border-color: color-mix(in srgb, var(--pinto-text, #1d1d1f) 60%, transparent); }
     .dt-pad { --size: clamp(112px, 36vmin, 156px); width: var(--size); height: var(--size); border-radius: 50%;
       left: calc(env(safe-area-inset-left) + 16px); bottom: calc(env(safe-area-inset-bottom) + 20px); }
     .dt-knob { position: absolute; left: 50%; top: 50%; width: 42%; height: 42%; border-radius: 50%;
-      transform: translate(-50%, -50%); background: rgba(255,255,255,.22); border: 1.5px solid rgba(255,255,255,.45);
+      transform: translate(-50%, -50%); background: color-mix(in srgb, var(--pinto-text, #1d1d1f) 20%, transparent); border: 1.5px solid color-mix(in srgb, var(--pinto-text, #1d1d1f) 45%, transparent);
       box-sizing: border-box; pointer-events: none; }
     .dt-btn { border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .dt-fire { width: 80px; height: 80px; right: calc(env(safe-area-inset-right) + 16px);

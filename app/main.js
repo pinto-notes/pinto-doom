@@ -6,6 +6,11 @@
   const canvas = document.getElementById("screen");
   const ctx = canvas.getContext("2d");
   const say = (t) => { status.textContent = t; };
+  // The note's title at the top of the page, as Pinto shows a note's title; it follows a rename.
+  const bridge = window.pinto || window.amber;
+  const heading = document.getElementById("title");
+  const showTitle = (note) => { if (heading && note && note.title) heading.textContent = note.title; };
+  if (bridge) { showTitle(bridge.note); if (bridge.onChange) bridge.onChange((note) => showTitle(note)); }
   const doom = (window.doom = { state: "loading", frames: 0, tics: 0, log: [] });
   const WAD_SHA1 = "5b2e249b9c5133ec987b3ea77596381dc0d6bc1d";
 
@@ -222,11 +227,16 @@
       if (e.key.length === 1) return e.key.toLowerCase().charCodeAt(0) & 0xff;
       return 0;
     };
+    // The keys line goes quiet once you're playing (a move or a shot), and comes back with the menu.
+    const playKeys = new Set([0xac, 0xae, 0xad, 0xaf, 0xa3]);
+    const hint = (shown) => status.classList.toggle("gone", !shown);
     const key = (pressed) => (e) => {
       if (e.metaKey) return; // the app's own shortcuts
       const k = code(e);
       if (!k) return;
       e.preventDefault();
+      if (pressed && playKeys.has(k)) hint(false);
+      if (pressed && k === 27) hint(true);
       if (pressed && e.repeat) return;
       Module._pinto_key(pressed ? 1 : 0, k);
     };

@@ -20,7 +20,7 @@ You can also drop the `app` folder onto a note in the Mac app, or push it with t
 
 ## Play
 
-Click the game, then press Enter. Arrows move, Ctrl fires, Space opens doors, Shift runs, Alt strafes, Esc opens the menu. On a phone, use the pad at the bottom left to move and turn, and the Fire, Use and Menu buttons. Sound starts with your first click, tap or key press. [app/README.md](app/README.md) has the details.
+The game sits in the note under its title, on the note's own background. Click the game, then press Enter. Arrows move, Ctrl fires, Space opens doors, Shift runs, Alt strafes, Esc opens the menu. On a phone, use the pad at the bottom left to move and turn, and the Fire, Use and Menu buttons. Sound starts with your first click, tap or key press. [app/README.md](app/README.md) has the details.
 
 ## What's here
 
