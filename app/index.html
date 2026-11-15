@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Doom</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; color: #bbb; }
+  body { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+         font: 13px -apple-system, system-ui, sans-serif; overflow: hidden; }
+  #screen { width: min(100vw, calc((100vh - 48px) * 4 / 3)); aspect-ratio: 4 / 3; image-rendering: pixelated;
+            background: #000; outline: none; display: block; }
+  #status { min-height: 18px; text-align: center; padding: 0 16px; }
+</style>
+</head>
+<body>
+<canvas id="screen" width="320" height="200" tabindex="0" aria-label="Doom"></canvas>
+<p id="status">Loading Doom…</p>
+<script src="doom.js"></script>
+<script src="main.js"></script>
+<script src="touch.js"></script>
+</body>
+</html>
